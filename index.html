@@ -3,49 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arcade Website</title>
+    <title>🎮 Learn to Be Smart - Arcade Games</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
 </head>
 <body>
     <header>
-        <h1>Welcome to the Arcade</h1>
-        <nav>
-            <ul>
-                <li><a href="#games">Games</a></li>
-                <li><a href="#categories">Categories</a></li>
-                <li><a href="#favorites">Favorites</a></li>
-                <li><a href="#search">Search</a></li>
-            </ul>
-        </nav>
-        <button id="darkModeToggle">Toggle Dark Mode</button>
+        <div class="header-content">
+            <h1>🎮 Learn to Be Smart Arcade</h1>
+            <p class="tagline">Play, Learn & Have Fun!</p>
+            <nav>
+                <ul>
+                    <li><a href="#games">Games</a></li>
+                    <li><a href="#categories">Categories</a></li>
+                    <li><a href="#favorites">Favorites</a></li>
+                </ul>
+            </nav>
+        </div>
+        <button id="darkModeToggle">🌙 Dark Mode</button>
     </header>
+
     <main>
-        <section id="games">
-            <h2>Available Games</h2>
-            <!-- Game list will be dynamically generated here -->
+        <section id="search">
+            <h2>🔍 Search Games</h2>
+            <input type="text" id="searchInput" placeholder="Search for your favorite game...">
         </section>
+
         <section id="categories">
-            <h2>Categories</h2>
+            <h2>📂 Categories</h2>
             <ul>
-                <li>Action</li>
-                <li>Puzzle</li>
-                <li>Adventure</li>
-                <li>Sports</li>
-                <li>More...</li>
+                <li><button class="category-btn" onclick="filterByCategory('Action')">⚡ Action</button></li>
+                <li><button class="category-btn" onclick="filterByCategory('Puzzle')">🧩 Puzzle</button></li>
+                <li><button class="category-btn" onclick="filterByCategory('Adventure')">🗺️ Adventure</button></li>
+                <li><button class="category-btn" onclick="filterByCategory('Sports')">⚽ Sports</button></li>
+                <li><button class="category-btn" onclick="filterByCategory('Casual')">🎯 Casual</button></li>
+                <li><button class="category-btn" onclick="renderGames(games)">All Games</button></li>
             </ul>
         </section>
-        <section id="favorites">
-            <h2>Your Favorites</h2>
-            <!-- Favorites will be displayed here -->
+
+        <section id="games">
+            <h2>🎮 Available Games</h2>
+            <div class="games-container" id="gamesContainer"></div>
         </section>
-        <section id="search">
-            <h2>Search Games</h2>
-            <input type="text" id="searchInput" placeholder="Search for a game...">
+
+        <section id="favorites">
+            <h2>⭐ Your Favorites</h2>
+            <div class="games-container" id="favoritesContainer"></div>
         </section>
     </main>
+
     <footer>
-        <p>&copy; 2026 Arcade Website</p>
+        <p>&copy; 2026 Learn to Be Smart Arcade. All rights reserved. 🚀</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
