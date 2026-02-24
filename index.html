@@ -3,63 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arcade Games</title>
+    <title>Arcade Website</title>
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
 </head>
 <body>
     <header>
-        <h1>Fun Arcade Website</h1>
-        <input type="text" id="search" placeholder="Search games...">
-        <button id="dark-mode-toggle">Toggle Dark Mode</button>
+        <h1>Welcome to the Arcade</h1>
+        <nav>
+            <ul>
+                <li><a href="#games">Games</a></li>
+                <li><a href="#categories">Categories</a></li>
+                <li><a href="#favorites">Favorites</a></li>
+                <li><a href="#search">Search</a></li>
+            </ul>
+        </nav>
+        <button id="darkModeToggle">Toggle Dark Mode</button>
     </header>
     <main>
+        <section id="games">
+            <h2>Available Games</h2>
+            <!-- Game list will be dynamically generated here -->
+        </section>
         <section id="categories">
             <h2>Categories</h2>
             <ul>
-                <li><button class="category">Action</button></li>
-                <li><button class="category">Puzzle</button></li>
-                <li><button class="category">Adventure</button></li>
-                <li><button class="category">Sports</button></li>
-                <li><button class="category">Strategy</button></li>
+                <li>Action</li>
+                <li>Puzzle</li>
+                <li>Adventure</li>
+                <li>Sports</li>
+                <li>More...</li>
             </ul>
-        </section>
-        <section id="games">
-            <h2>Games</h2>
-            <div class="game" data-rating="5">
-                <h3>Game Title 1</h3>
-                <p>Description of Game 1</p>
-                <button class="favorite">Add to Favorites</button>
-                <span class="rating">Rating: 5/5</span>
-            </div>
-            <!-- Repeat similar blocks for other games -->
         </section>
         <section id="favorites">
             <h2>Your Favorites</h2>
-            <ul id="favorite-games">
-                <!-- List of favorite games will appear here -->
-            </ul>
+            <!-- Favorites will be displayed here -->
+        </section>
+        <section id="search">
+            <h2>Search Games</h2>
+            <input type="text" id="searchInput" placeholder="Search for a game...">
         </section>
     </main>
     <footer>
-        <p>© 2026 Fun Arcade Website</p>
+        <p>&copy; 2026 Arcade Website</p>
     </footer>
-    <script>
-        // JavaScript for search functionality, favorites system, dark mode toggle
-        const darkModeToggle = document.getElementById('dark-mode-toggle');
-        darkModeToggle.addEventListener('click', () => {
-            document.body.classList.toggle('dark-mode');
-        });
-
-        const searchInput = document.getElementById('search');
-        searchInput.addEventListener('input', (e) => {
-            const filter = e.target.value.toLowerCase();
-            const games = document.querySelectorAll('.game');
-            games.forEach(game => {
-                const title = game.querySelector('h3').textContent.toLowerCase();
-                game.style.display = title.includes(filter) ? '' : 'none';
-            });
-        });
-    </script>
 </body>
 </html>
